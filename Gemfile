@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'net-smtp'
 gem 'tzinfo-data'
 
+gem 'semantic-ui-sass'
+gem 'jquery-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
