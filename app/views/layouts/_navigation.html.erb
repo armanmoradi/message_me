@@ -3,12 +3,14 @@
      Messages
 </a>
 <div class="right menu">
-    <a class="item">Log out</a>
-     <%= link_to "Log in", login_path, class: "item" %>
-    <a class="item">Sign up</a>
-    <div class="item">
-        <div class="ui primary button">
-            Sign Up
+    <% if logged_in? %>
+    <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
+    <%  else %>
+        <%= link_to "Log in", login_path, class: "item" %>  
+    <% end %>
+    <% if !logged_in? %>
+        <div class="item">
+            <%= link_to "Log in", login_path, class: "ui primary button" %>
         </div>
-    </div>
+    <% end %>
 </div>
