@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    protect_from_forgery
     before_action :logged_in_redirect, only: [:new, :create]
     def new
 
