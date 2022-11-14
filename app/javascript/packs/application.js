@@ -2,6 +2,9 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+
+
+
 require("semantic-ui-sass")
 
 import Rails from "@rails/ujs"
@@ -11,7 +14,11 @@ import "channels"
 import '@doabit/semantic-ui-sass'
 import '@doabit/semantic-ui-sass/src/scss/semantic-ui.scss'
 
-
+scroll_bottom = function() {
+  if ($('#messages').length > 0) {
+    $('#messages').scrollTop($('#messages')[0].scrollHeight);
+  }
+}
 
 Rails.start()
 Turbolinks.start()
@@ -21,5 +28,6 @@ $(document).on('turbolinks:load', function() {
     $('.message .close').on('click', function() {
       $(this).closest('.message').transition('fade');
     });
+    scroll_bottom();
 })
 
